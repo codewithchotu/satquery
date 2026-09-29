@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#061512">
+<meta name="description" content="SatQuery AI — ask questions of satellite imagery in natural language.">
+<title>SatQuery AI — The Earth speaks clearly.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header" id="top">
+  <a class="brand" href="#top" aria-label="SatQuery AI home"><span class="brand-mark" aria-hidden="true"><i></i></span><span>SatQuery AI</span></a>
+  <nav class="desktop-nav" aria-label="Primary navigation">
+    <a href="#product">Product</a>
+    <a href="#perspectives">Use Cases</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="#imagery">Technology</a>
+    <a href="#voices">Voices</a>
+  </nav>
+  <div class="header-actions">
+    <button class="search-btn" id="open-search" aria-label="Search use cases">⌕</button>
+    <button class="top-cta" data-open-login>Launch App <span>→</span></button>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <button class="mobile-close" id="mobile-close" aria-label="Close menu">×</button>
+  <a href="#product">Product</a><a href="#perspectives">Use Cases</a><a href="#how-it-works">How it works</a><a href="#imagery">Technology</a><a href="#voices">Voices</a>
+</nav>
+<main>
+  <section class="hero" id="product" aria-labelledby="hero-title">
+    <img class="hero-bg" src="assets/hero-satellite.png" alt="Aerial satellite-style view of a coastal river delta" fetchpriority="high">
+    <div class="hero-vignette" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">SATELLITE IMAGERY. REAL INSIGHTS.</p>
+        <h1 id="hero-title">The Earth<br>speaks clearly.<br><em>You just ask.</em></h1>
+        <p class="hero-description">SatQuery AI turns complex satellite imagery into clear, actionable answers — without asking you to become a remote-sensing expert.</p>
+        <div class="hero-actions">
+          <button class="light-cta" data-open-login>Try SatQuery AI <span>→</span></button>
+          <button class="outline-cta" id="watch-demo"><span class="play-icon">▶</span> Watch Video</button>
+        </div>
+        <button class="scroll-cue" data-scroll="perspectives"><span>↓</span> Scroll to explore</button>
+      </div>
+      <aside class="hero-query" aria-label="Interactive satellite question">
+        <div class="query-top"><div><span class="query-kicker">LIVE QUESTION</span><strong>What would you like to know about this area?</strong></div><button class="query-run" id="hero-run" aria-label="Run question">→</button></div>
+        <div class="query-input" id="hero-prompt">Show me land-use changes in this area over time.</div>
+        <div class="query-examples"><span>Try an example</span><div>
+          <button data-prompt="Where did the floodwater reach the city edge?">Detect changes</button>
+          <button data-prompt="Identify water bodies and their boundaries.">Map water bodies</button>
+          <button data-prompt="Which areas became built-up over time?">Find built-up areas</button>
+        </div></div>
+        <div class="query-result" id="hero-result"><span class="live-dot"></span><div><b>Question ready.</b> Choose an example or run the current question.</div></div>
+        <div class="query-foot"><span>OPTICAL</span><span>MULTISPECTRAL</span><span>SAR</span></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="perspectives" id="perspectives" aria-labelledby="perspectives-title">
+    <div class="container section-pad">
+      <div class="perspective-head">
+        <div><p class="eyebrow eyebrow-dark">REAL PLACES. REAL QUESTIONS.</p><h2 id="perspectives-title">One planet.<br><em>Many perspectives.</em></h2></div>
+        <div class="perspective-side"><p>From disaster response to agriculture, urban planning, water and forests — each example pairs a real observation with a question it can help answer.</p><div class="carousel-controls"><button id="prev-card" aria-label="Previous use case">←</button><button id="next-card" aria-label="Next use case">→</button></div></div>
+      </div>
+      <div class="carousel-window" id="carousel-viewport" tabindex="0" aria-label="Satellite use case examples"><div class="carousel-track" id="carousel-track"></div></div>
+    </div>
+  </section>
+
+  <section class="how-it-works" id="how-it-works" aria-labelledby="how-title">
+    <div class="container how-container">
+      <div class="how-intro-row">
+        <div><p class="eyebrow">HOW IT WORKS</p><h2 id="how-title">You ask.<br><em>SatQuery figures out the rest.</em></h2></div>
+        <p class="how-intro-copy">One question can pull together optical context, time-series evidence, radar observations and geospatial reasoning — while the evidence stays attached to the answer.</p>
+      </div>
+      <div class="workflow-tabs" id="workflow-tabs" role="tablist" aria-label="SatQuery workflow steps">
+        <button class="workflow-tab is-active" data-step="0" role="tab" aria-selected="true"><span class="step-number">01</span><span class="step-copy"><b>Upload imagery</b><small>Give SatQuery the scene.</small></span></button>
+        <span class="step-line" aria-hidden="true"></span>
+        <button class="workflow-tab" data-step="1" role="tab" aria-selected="false"><span class="step-number">02</span><span class="step-copy"><b>Ask your question</b><small>Use natural language.</small></span></button>
+        <span class="step-line" aria-hidden="true"></span>
+        <button class="workflow-tab" data-step="2" role="tab" aria-selected="false"><span class="step-number">03</span><span class="step-copy"><b>AI analyses</b><small>Choose the evidence that matters.</small></span></button>
+        <span class="step-line" aria-hidden="true"></span>
+        <button class="workflow-tab" data-step="3" role="tab" aria-selected="false"><span class="step-number">04</span><span class="step-copy"><b>Get an answer</b><small>Evidence stays attached.</small></span></button>
+      </div>
+      <div class="workflow-stage">
+        <div class="workflow-visual" id="workflow-visual">
+          <div class="visual-topline"><span id="visual-kicker">OPTICAL · INPUT SCENE</span><div id="visual-badges"></div></div>
+          <div class="visual-canvas" id="visual-canvas"></div>
+          <div class="visual-bottomline"><span id="visual-caption">Rio Grande Valley · Texas · 13 May 2022</span><span id="visual-index">01 / 04</span></div>
+        </div>
+        <article class="workflow-detail" aria-live="polite">
+          <div class="detail-top"><span id="detail-overline">01 · INPUT</span><span id="detail-state">READY</span></div>
+          <h3 id="detail-title">Start with the imagery.</h3>
+          <p class="detail-copy" id="detail-copy">A real observation enters first. The source and location context stay attached to the scene.</p>
+          <div class="detail-question"><span class="detail-label">QUESTION</span><p id="detail-question">“Which fields show different crop conditions?”</p></div>
+          <div class="analysis-route"><span class="detail-label">EVIDENCE USED</span><div id="route-chips"></div></div>
+          <div class="detail-answer"><div class="answer-head"><span id="answer-label">OBSERVATION</span><span class="evidence-status" id="answer-status"><i></i> ATTACHED</span></div><p id="detail-answer">Lighter green fields are cotton, while darker green fields are mostly sorghum or corn.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="impact" id="impact" aria-labelledby="impact-title">
+    <div class="impact-media" aria-hidden="true"><img src="assets/impact-mountains.png" alt=""><div class="impact-wash"></div></div>
+    <div class="container impact-inner">
+      <div class="impact-copy"><p class="eyebrow eyebrow-dark">REAL INSIGHTS. REAL IMPACT.</p><h2 id="impact-title">Turning satellite data<br>into informed decisions.</h2><p class="impact-lead">The value is not another map. It is helping people see what matters, sooner, and act with better context.</p></div>
+      <div class="impact-grid">
+        <article class="impact-card"><span class="impact-icon">◌</span><h3>Faster<br>Response</h3><p>See changing flood extents with the evidence still in view.</p></article>
+        <article class="impact-card"><span class="impact-icon">⌗</span><h3>Smarter<br>Planning</h3><p>Ask about land use, growth and spatial patterns in plain language.</p></article>
+        <article class="impact-card"><span class="impact-icon">◇</span><h3>Sustainable<br>Resource Use</h3><p>Bring water, agriculture and vegetation observations into one context.</p></article>
+        <article class="impact-card"><span class="impact-icon">✧</span><h3>Greater<br>Resilience</h3><p>Keep the interpretation tied to the observations over time.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="imagery" id="imagery" aria-labelledby="imagery-title">
+    <div class="imagery-bg" aria-hidden="true"><img src="assets/hero-satellite.png" alt=""><div class="imagery-shade"></div></div>
+    <div class="container imagery-inner">
+      <div class="imagery-copy"><p class="eyebrow">BUILT FOR REAL-WORLD COMPLEXITY</p><h2 id="imagery-title">A wide range of imagery.<br><em>A deeper understanding.</em></h2><p>SatQuery does not depend on a single visual language. It can route a question toward the observation type that carries the signal you need.</p></div>
+      <div class="mode-gallery" aria-label="Optical, multispectral and SAR examples">
+        <article class="mode-card mode-optical"><div class="mode-image"><img src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/images/imagerecords/151000/151152/texascotton_oli_2022133_lrg.jpg?crop=faces%2Cfocalpoint&fit=clip&h=1200&w=1240" data-fallback="assets/workflow/optical-cotton.jpg" alt="Optical agricultural field pattern" loading="eager"></div><div class="mode-caption"><span>01</span><b>Optical</b><small>Landsat · surface context</small></div></article>
+        <article class="mode-card mode-multi"><div class="mode-image"><img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2015/07/sentinel-2_for_agriculture/15535208-1-eng-GB/Sentinel-2_for_agriculture_pillars.jpg" data-fallback="assets/workflow/multispectral.jpg" alt="Multispectral false-colour agricultural pattern" loading="eager"></div><div class="mode-caption"><span>02</span><b>Multispectral</b><small>Sentinel-2 · spectral signal</small></div></article>
+        <article class="mode-card mode-sar"><div class="mode-image"><img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/02/flooding_around_the_tejo_river_portugal_by_sentinel-1/27102111-1-eng-GB/Flooding_around_the_Tejo_River_Portugal_by_Sentinel-1_pillars.jpg" data-fallback="assets/workflow/sar.jpg" alt="Sentinel-1 SAR flood change observation" loading="eager"></div><div class="mode-caption"><span>03</span><b>SAR</b><small>Sentinel-1 · change &amp; structure</small></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="voices" id="voices" aria-labelledby="voices-title">
+    <div class="container section-pad voices-inner">
+      <div class="voices-head"><div><p class="eyebrow eyebrow-dark">PILOT VOICES</p><h2 id="voices-title">Built for questions<br><em>people actually ask.</em></h2></div><div class="voices-side"><p>Representative feedback used for this prototype.</p><div class="voice-controls"><button id="prev-voice" aria-label="Previous feedback">←</button><button id="next-voice" aria-label="Next feedback">→</button></div></div></div>
+      <div class="voice-window" id="voice-viewport"><div class="voice-track" id="voice-track"></div></div>
+    </div>
+  </section>
+
+  <section class="explore-cta" id="explore" aria-labelledby="explore-title">
+    <img class="explore-bg" src="assets/cta-river.png" alt="Aerial river winding through dense forest and fields">
+    <div class="explore-shade" aria-hidden="true"></div>
+    <div class="container explore-inner">
+      <div><p class="eyebrow">THE NEXT INSIGHT<br>COULD BE YOURS</p><h2 id="explore-title">Start exploring.</h2><p>Upload your imagery, ask your questions, and see what the Earth can tell you.</p></div>
+      <div class="explore-action"><button class="light-cta" data-open-login>Try SatQuery AI <span>→</span></button></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-brand"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i></span><span>SatQuery AI</span></a><p>Satellite intelligence for a more informed world.</p></div>
+    <div class="footer-col"><h3>Product</h3><a href="#product">Overview</a><a href="#perspectives">Use Cases</a><a href="#how-it-works">How it works</a><a href="#imagery">Technology</a></div>
+    <div class="footer-col"><h3>Voices</h3><a href="#voices">Pilot feedback</a><a href="#perspectives">Use cases</a><a href="#impact">Impact</a></div>
+    <div class="footer-col"><h3>Company</h3><a href="#top">About SatQuery</a><a href="#top">Team</a><a href="#explore">Get started</a><a href="mailto:hello@satquery.ai">Contact</a></div>
+    <div class="footer-update"><h3>Stay updated</h3><p>Get new research and product updates.</p><form id="subscribe-form"><div class="email-wrap"><input id="subscribe-email" type="email" placeholder="Enter your email" required aria-label="Email address"><button type="submit" aria-label="Subscribe">→</button></div></form><span id="subscribe-status" class="subscribe-status"></span></div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 SatQuery AI. All rights reserved.</span><span>Remote sensing, made conversational.</span></div>
+</footer>
+
+<!-- Login / launch modal -->
+<div class="modal-backdrop" id="login-modal" aria-hidden="true">
+  <div class="login-modal login-shell" role="dialog" aria-modal="true" aria-labelledby="login-title">
+    <button class="modal-close login-close" data-close-modal aria-label="Close">×</button>
+    <div class="login-visual" aria-hidden="true">
+      <img src="assets/hero-satellite.png" alt="">
+      <div class="login-visual-shade"></div>
+      <div class="login-visual-copy"><span class="eyebrow">SATQUERY AI</span><strong>Ask the Earth.<br><em>Understand the evidence.</em></strong><small>Natural-language access to optical, multispectral and radar observations.</small></div>
+    </div>
+    <div class="login-form-panel">
+      <div class="login-brand"><span class="brand-mark" aria-hidden="true"><i></i></span><span>SatQuery AI</span></div>
+      <p class="eyebrow eyebrow-dark">LAUNCH APP</p>
+      <h2 id="login-title">Continue to your workspace.</h2>
+      <p class="login-sub">Sign in to upload imagery, ask questions and continue your analysis from one place.</p>
+      <button class="google-btn" id="google-login"><span class="google-g">G</span> Continue with Google</button>
+      <div class="modal-divider"><span>or continue with email</span></div>
+      <label class="modal-label" for="login-email">Email</label><input class="login-input" id="login-email" type="email" placeholder="you@example.com" autocomplete="email">
+      <label class="modal-label" for="login-password">Password</label><input class="login-input" id="login-password" type="password" placeholder="••••••••" autocomplete="current-password">
+      <button class="light-cta login-submit" id="login-submit">Sign in <span>→</span></button>
+      <div class="login-footer"><span>New to SatQuery?</span><button id="create-account">Create an account</button></div>
+      <div class="login-status" id="login-status"><span class="live-dot"></span><span>Ready to continue.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Watch demo -->
+<div class="modal-backdrop" id="demo-modal" aria-hidden="true">
+  <div class="demo-modal modal" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+    <button class="modal-close" data-close-modal aria-label="Close">×</button>
+    <p class="eyebrow">PRODUCT WALKTHROUGH</p><h2 id="demo-title">From image to answer.</h2>
+    <div class="demo-sequence"><span class="active">01</span><i></i><span>02</span><i></i><span>03</span><i></i><span>04</span></div>
+    <div class="demo-panel"><div class="demo-pulse"></div><strong id="demo-copy">Upload imagery</strong><small>Interactive workflow preview</small></div>
+  </div>
+</div>
+
+<!-- Search -->
+<div class="modal-backdrop" id="search-modal" aria-hidden="true">
+  <div class="search-modal modal" role="dialog" aria-modal="true" aria-labelledby="search-title">
+    <button class="modal-close" data-close-modal aria-label="Close">×</button><p class="eyebrow">SEARCH</p><h2 id="search-title">Find a real use case.</h2><input class="search-input" id="search-input" type="search" placeholder="Flood, agriculture, water, forest…" autocomplete="off"><div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
